@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="/">HOME</a>
+        <a href="/search">search</a>
+        <a href="/myList">myList</a>
+       
+    </header>
+    <main>
+        <div class="contan">
+<% jobKey.forEach(item=>{ %>
+     
+        <div>
+            <h2><%= item.title %> </h2>
+            <h3><%= item.company %> </h3>
+            <h3><%= item.location %> </h3>
+            <a href="<%= item.url %> "></a>
+        </div>
+
+        
+<%}) %>
+</div>
+    </main>
+</body>
+</html>

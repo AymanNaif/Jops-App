@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <main>
+        <div class="contan">
+        <% dataKey.forEach(item=>{ %>
+     <div>
+            <h2><%= item.title %> </h2>
+            <h3><%= item.company %> </h3>
+            <h3><%= item.location %> </h3>
+            <a href="<%= item.url %> "></a>
+
+            <form action="/viewDetails/<%= item.id %>" method="post">
+            <input style="display: none;" type="text" name="title" value="<%= item.title %> ">
+            <input style="display: none;" type="text" name="company" value="<%= item.company %>">
+            <input style="display: none;" type="text" name="location" value="<%= item.location %>">
+            <input style="display: none;" type="text" name="url" value="<%= item.url %> ">
+            <input style="display: none;" type="text" name="url" value="<%= item.description %> ">
+
+            <button> view detalis</button>
+            </form>
+
+             </div>
+
+        <%}) %> 
+    </div>
+    </main>
+</body>
+</html>

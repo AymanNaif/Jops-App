@@ -1,0 +1,16 @@
+.contan {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  gap: 5%;
+}
+
+div {
+  margin-left: 10%;
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.hiden {
+  background-color: red;
+  display: none;
+}

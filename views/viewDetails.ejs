@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <main>
+
+        <% viewKey.forEach(item=>{ %>
+
+    <div>
+        <h2><%= item.title %> </h2>
+            <h3><%= item.company %> </h3>
+            <h3><%= item.location %> </h3>
+            <a href="<%= item.url %> "></a>
+            <p><%= item.description %> </p>
+            
+        <button id="update"> Update</button>
+            <form class="hiden" action="/update/<%= item.id %>?_method=put" method="post">
+                <input  type="text" name="title" value="<%= item.title %> ">
+                <input  type="text" name="company" value="<%= item.company %>">
+                <input  type="text" name="location" value="<%= item.location %>">
+                <input  type="text" name="url" value="<%= item.url %> ">
+                <input  type="text" name="description" value="<%= item.description %> ">
+    
+                <button> Save</button>
+                </form> <br>
+
+                <form action="/delete/<%= item.id %>?_method=delete" method="post">
+                    <input style="display: none;" type="text" name="url" value="<%= item.id %> ">
+                
+                    <button>DELETE</button>
+                </form>
+                
+            </div>
+
+
+       <% }) %> 
+    </main>
+</body>
+</html>
